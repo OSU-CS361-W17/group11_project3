@@ -12,21 +12,15 @@ public class BattleshipModel {
 
     private Ship aircraftCarrier = new Ship("AircraftCarrier",5, new Coordinate(0,0),new Coordinate(0,0),false);
     private Ship battleship = new Ship("Battleship",4, new Coordinate(0,0),new Coordinate(0,0),true);
-    private Ship submarine = new Ship("Submarine",2, new Coordinate(0,0),new Coordinate(0,0),true);
-
-
     private CivilianShip clipper = new CivilianShip("Clipper", 3, new Coordinate(0, 0), new Coordinate(0, 0),false);
     private CivilianShip dinghy = new CivilianShip("Dinghy", 1, new Coordinate(0, 0), new Coordinate(0, 0),false);
-
+    private Ship submarine = new Ship("Submarine",2, new Coordinate(0,0),new Coordinate(0,0),true);
 
     private Ship computer_aircraftCarrier = new Ship("Computer_AircraftCarrier",5, new Coordinate(2,2),new Coordinate(2,7),false);
     private Ship computer_battleship = new Ship("Computer_Battleship",4, new Coordinate(2,8),new Coordinate(6,8),true);
-    private Ship computer_submarine = new Ship("Computer_Submarine",2, new Coordinate(9,6),new Coordinate(9,8),true);
-
-
-    private CivilianShip computer_clipper = new CivilianShip("Computer_Clipper", 3, new Coordinate(1, 1), new Coordinate(3, 1),false);
+    private CivilianShip computer_clipper = new CivilianShip("Computer_Clipper", 3, new Coordinate(0, 0), new Coordinate(0, 0),false);
     private CivilianShip computer_dinghy = new CivilianShip("Computer_Dinghy", 1, new Coordinate(0, 0), new Coordinate(0, 0),false);
-
+    private Ship computer_submarine = new Ship("Computer_Submarine",2, new Coordinate(9,6),new Coordinate(9,8),true);
 
     ArrayList<Coordinate> playerHits;
     private ArrayList<Coordinate> playerMisses;

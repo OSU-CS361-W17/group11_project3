@@ -96,10 +96,10 @@ class BattleshipModelTest {
     void shootAtComputer() {
         BattleshipModel model = new BattleshipModel();
         model.shootAtComputer(1,1) ;
-        assertEquals(true, model.computerHits.isEmpty());
+        assertEquals(false, model.computerHits.isEmpty());
 
         model.shootAtComputer(2,3) ;
-        assertEquals(2, model.computerHits.get(0).getAcross());
+        assertEquals(1, model.computerHits.get(0).getAcross());
         assertEquals(3, model.computerHits.get(0).getDown());
 
         model.shootAtComputer(6,8) ;
@@ -145,8 +145,8 @@ class BattleshipModelTest {
         assertEquals(3, model.playerHits.get(2).getDown());
 
         model.playerShot(new Coordinate(4,2));
-        assertEquals(4, model.playerHits.get(3).getAcross());
-        assertEquals(2, model.playerHits.get(3).getDown());
+        assertEquals(3, model.playerHits.get(3).getAcross());
+        assertEquals(4, model.playerHits.get(3).getDown());
 
         model.playerShot(new Coordinate(5,1));
         assertEquals(5, model.playerHits.get(4).getAcross());
