@@ -24,8 +24,8 @@ public class BattleshipModel {
     private Ship computer_submarine = new Ship("Computer_Submarine",2, new Coordinate(9,6),new Coordinate(9,8),true);
 
 
-    private CivilianShip computer_clipper = new CivilianShip("Clipper", 3, new Coordinate(0, 0), new Coordinate(0, 0),false);
-    private CivilianShip computer_dinghy = new CivilianShip("Dinghy", 1, new Coordinate(0, 0), new Coordinate(0, 0),false);
+    private CivilianShip computer_clipper = new CivilianShip("Computer_Clipper", 3, new Coordinate(1, 1), new Coordinate(3, 1),false);
+    private CivilianShip computer_dinghy = new CivilianShip("Computer_Dinghy", 1, new Coordinate(0, 0), new Coordinate(0, 0),false);
 
 
     ArrayList<Coordinate> playerHits;
@@ -103,7 +103,18 @@ public class BattleshipModel {
             computerHits.add(coor);
         }else if (computer_submarine.covers(coor)){
             computerHits.add(coor);
-        } else {
+        }else if (computer_clipper.covers(coor)){
+            for(int i = 1; i <= 10; i++){
+                for(int j = 1; j <= 10; j++){
+                    Coordinate test = new Coordinate(i, j);
+                    if(computer_clipper.covers(test)){
+                        computerHits.add(test);
+                    }
+                }
+            }
+        }else if (computer_dinghy.covers(coor)){
+            computerHits.add(coor);
+        }else {
             computerMisses.add(coor);
         }
     }
@@ -131,6 +142,14 @@ public class BattleshipModel {
         }else if (submarine.covers(coor)){
             playerHits.add(coor);
         }else if(clipper.covers(coor)) {
+            for(int i = 1; i <= 10; i++){
+                for(int j = 1; j <= 10; j++){
+                    Coordinate test = new Coordinate(i, j);
+                    if(clipper.covers(test)){
+                        playerHits.add(test);
+                    }
+                }
+            }
             playerHits.add(coor);
         }else if(dinghy.covers(coor)){
             playerHits.add(coor);
